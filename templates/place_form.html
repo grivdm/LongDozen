@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="Control.Geocoder.js"></script>
+    <link rel = "stylesheet" href = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+    <script src = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+
+</head>
+<body onload="getLocation()">
+    {%  extends 'main.html' %}
+    {% load static %}
+    {% block content %}
+    <div>
+        <form method="post" action="">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div id = "map" style = "width: 800px; height: 300px"></div>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+        <script type="text/javascript" src={% static 'js/map.js' %}></script>{%  endblock content %}
+</body>
+</html>

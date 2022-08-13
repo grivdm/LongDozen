@@ -1,0 +1,548 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.58.5 b0c4acbb",
+  "osm3s": {
+    "timestamp_osm_base": "2022-08-09T11:25:09Z",
+    "timestamp_areas_base": "2022-07-20T11:06:24Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 979735482,
+  "lat": 47.2594050,
+  "lon": 39.6265424,
+  "tags": {
+    "amenity": "bar"
+  }
+},
+{
+  "type": "node",
+  "id": 1471218521,
+  "lat": 47.2841057,
+  "lon": 39.7534660,
+  "tags": {
+    "amenity": "bar",
+    "name": "Неолит"
+  }
+},
+{
+  "type": "node",
+  "id": 2452686451,
+  "lat": 47.2324344,
+  "lon": 39.7108589,
+  "tags": {
+    "amenity": "bar",
+    "name": "Спорт Бар"
+  }
+},
+{
+  "type": "node",
+  "id": 2922441412,
+  "lat": 47.2156126,
+  "lon": 39.7082921,
+  "tags": {
+    "amenity": "bar",
+    "internet_access": "wlan",
+    "internet_access:fee": "no",
+    "name": "Спорт бар ТОРНАDО",
+    "opening_hours": "24/7",
+    "phone": "+7 (863) 227-06-48",
+    "website": "www.sportbar-tornado.ru/netbars/410"
+  }
+},
+{
+  "type": "node",
+  "id": 3016844620,
+  "lat": 47.2278784,
+  "lon": 39.7085225,
+  "tags": {
+    "addr:city": "Ростов-на-Дону",
+    "addr:street": "улица Города Волос",
+    "amenity": "bar",
+    "cuisine": "grill",
+    "email": "friendly.rostov@gmail.com",
+    "name": "Friendly",
+    "opening_hours": "Mo-Su 10:00-01:00",
+    "phone": "8(863)2295079",
+    "smoking": "outside",
+    "website": "https://friendly-cgbar.gidm.ru/",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 3023473199,
+  "lat": 47.2340769,
+  "lon": 39.7016262,
+  "tags": {
+    "amenity": "bar",
+    "name": "Пинта"
+  }
+},
+{
+  "type": "node",
+  "id": 3243792367,
+  "lat": 47.2272876,
+  "lon": 39.7056991,
+  "tags": {
+    "amenity": "bar",
+    "internet_access": "wlan",
+    "name": "Пятница",
+    "opening_hours": "24/7",
+    "phone": "226-88-00",
+    "smoking": "dedicated",
+    "website": "https://pyatnica.gidm.ru/"
+  }
+},
+{
+  "type": "node",
+  "id": 3807905957,
+  "lat": 47.2125380,
+  "lon": 39.6211190,
+  "tags": {
+    "amenity": "bar",
+    "name": "Killfish"
+  }
+},
+{
+  "type": "node",
+  "id": 3950436921,
+  "lat": 47.2188497,
+  "lon": 39.7133452,
+  "tags": {
+    "amenity": "bar",
+    "name": "Кикс"
+  }
+},
+{
+  "type": "node",
+  "id": 3950436922,
+  "lat": 47.2190045,
+  "lon": 39.7129865,
+  "tags": {
+    "amenity": "bar",
+    "name": "Пивной гараж"
+  }
+},
+{
+  "type": "node",
+  "id": 4009278242,
+  "lat": 47.2215119,
+  "lon": 39.7161275,
+  "tags": {
+    "addr:city": "Ростов-на-Дону",
+    "addr:housenumber": "46",
+    "addr:street": "Газетный переулок",
+    "amenity": "bar",
+    "name": "Hard Rock Bar",
+    "opening_hours": "Mo-Th 13:00-02:00, Fr 13:00-04:00, Sa-Su 14:00-04:00",
+    "website": "https://vk.com/hard_rock_bar"
+  }
+},
+{
+  "type": "node",
+  "id": 4088615807,
+  "lat": 47.2230729,
+  "lon": 39.7240759,
+  "tags": {
+    "addr:housenumber": "27",
+    "addr:street": "проспект Чехова",
+    "amenity": "bar",
+    "name": "Наши верные друзья",
+    "name:ru": "Наши верные друзья",
+    "shop": "pet"
+  }
+},
+{
+  "type": "node",
+  "id": 4227235293,
+  "lat": 47.2593812,
+  "lon": 39.7220180,
+  "tags": {
+    "amenity": "bar",
+    "internet_access": "wlan",
+    "name": "Планета Боулинг",
+    "opening_hours": "Mo-Fr 12:00-06:00; Sa-Su 10:00-06:00",
+    "phone": "+7 (863) 272 54 45",
+    "website": "rnd.planetabowling.com"
+  }
+},
+{
+  "type": "node",
+  "id": 4269633416,
+  "lat": 47.2271941,
+  "lon": 39.7145897,
+  "tags": {
+    "amenity": "bar",
+    "name": "Чешка"
+  }
+},
+{
+  "type": "node",
+  "id": 4316584189,
+  "lat": 47.1996385,
+  "lon": 39.6235832,
+  "tags": {
+    "amenity": "bar",
+    "name": "Добрый Эль"
+  }
+},
+{
+  "type": "node",
+  "id": 4381850016,
+  "lat": 47.2288089,
+  "lon": 39.7220164,
+  "tags": {
+    "amenity": "bar",
+    "name": "Гастро-бар \"Энди Таккер\""
+  }
+},
+{
+  "type": "node",
+  "id": 4509862789,
+  "lat": 47.2161180,
+  "lon": 39.7068007,
+  "tags": {
+    "addr:housenumber": "22",
+    "addr:street": "переулок Островского",
+    "amenity": "bar",
+    "name": "StereoBaza",
+    "name:ru": "StereoBaza"
+  }
+},
+{
+  "type": "node",
+  "id": 4657097956,
+  "lat": 47.2340676,
+  "lon": 39.7048176,
+  "tags": {
+    "addr:city": "Ростов-на-Дону",
+    "addr:street": "Соборный переулок",
+    "amenity": "bar",
+    "name": "Hobby Bar",
+    "name:ru": "Hobby Bar",
+    "smoking": "dedicated"
+  }
+},
+{
+  "type": "node",
+  "id": 4714046928,
+  "lat": 47.2268636,
+  "lon": 39.7143536,
+  "tags": {
+    "addr:housenumber": "151",
+    "addr:street": "улица Максима Горького",
+    "amenity": "bar",
+    "internet_access": "wlan",
+    "level": "1",
+    "name": "Караоке-бар \"Соловей\"",
+    "opening_hours": "Mo 00:15-06:00; Tu 20:00-24:00; We-Fr 00:00-05:00,20:00-24:00; Sa,Su 00:00-06:00,20:00-24:00"
+  }
+},
+{
+  "type": "node",
+  "id": 4717644690,
+  "lat": 47.2332737,
+  "lon": 39.7363907,
+  "tags": {
+    "amenity": "bar",
+    "name": "Hopscraft BAR",
+    "name:ru": "Hopscraft BAR"
+  }
+},
+{
+  "type": "node",
+  "id": 4980293121,
+  "lat": 47.2288708,
+  "lon": 39.7071533,
+  "tags": {
+    "amenity": "bar",
+    "name": "Пивзавод",
+    "name:en": "Craft BEER",
+    "name:ru": "Пивзавод",
+    "opening_hours": "Mo-Fr 11:00-02:00; Sa-Su 12:00-04:00"
+  }
+},
+{
+  "type": "node",
+  "id": 5073919728,
+  "lat": 47.2263629,
+  "lon": 39.7191980,
+  "tags": {
+    "amenity": "bar",
+    "name": "Крафтбар",
+    "name:ru": "Крафтбар"
+  }
+},
+{
+  "type": "node",
+  "id": 5074096122,
+  "lat": 47.2237734,
+  "lon": 39.7070368,
+  "tags": {
+    "amenity": "bar",
+    "name": "Бар Есенин",
+    "name:ru": "Бар Есенин"
+  }
+},
+{
+  "type": "node",
+  "id": 5077271631,
+  "lat": 47.2189646,
+  "lon": 39.7194106,
+  "tags": {
+    "amenity": "bar",
+    "name": "бокальчик",
+    "name:ru": "бокальчик"
+  }
+},
+{
+  "type": "node",
+  "id": 5134723921,
+  "lat": 47.2068444,
+  "lon": 39.6313154,
+  "tags": {
+    "addr:housenumber": "27/3",
+    "addr:street": "Коммунистический проспект",
+    "amenity": "bar",
+    "cuisine": "african",
+    "name": "Пивной магазин \"Хмель\"",
+    "name:en": "Fresh beer station",
+    "opening_hours": "Mo-Su 11:00-23:00"
+  }
+},
+{
+  "type": "node",
+  "id": 5203548221,
+  "lat": 47.2268405,
+  "lon": 39.7142086,
+  "tags": {
+    "amenity": "bar",
+    "name": "БурдаМоден. Городская танцплощадка",
+    "name:en": "Burdamodenbar",
+    "opening_hours": "Fr-Sa 21:00-06:00",
+    "phone": "2565605"
+  }
+},
+{
+  "type": "node",
+  "id": 5225892221,
+  "lat": 47.2396671,
+  "lon": 39.7021383,
+  "tags": {
+    "amenity": "bar",
+    "name": "Борода 2.0"
+  }
+},
+{
+  "type": "node",
+  "id": 5325869621,
+  "lat": 47.2325387,
+  "lon": 39.6256727,
+  "tags": {
+    "amenity": "bar",
+    "name": "Живое"
+  }
+},
+{
+  "type": "node",
+  "id": 5424504902,
+  "lat": 47.2316330,
+  "lon": 39.6503301,
+  "tags": {
+    "amenity": "bar",
+    "name": "ООО \"Артман\""
+  }
+},
+{
+  "type": "node",
+  "id": 5597186562,
+  "lat": 47.2183703,
+  "lon": 39.7332238,
+  "tags": {
+    "amenity": "bar",
+    "contact:facebook": "https://facebook.com/rbbrostov/",
+    "name:en": "Red Burger Bar",
+    "opening_hours": "Mo-Th 16:00-02:00; Fr 16:00-05:00; Sa 12:00-05:00; Su 12:00-02:00",
+    "phone": "+7 928 296 34 53",
+    "website": "http://goodrestaurants.ru/restaurants/red-burger-bar/"
+  }
+},
+{
+  "type": "node",
+  "id": 6075962391,
+  "lat": 47.2330363,
+  "lon": 39.7178990,
+  "tags": {
+    "addr:housenumber": "80",
+    "addr:street": "проспект Соколова",
+    "amenity": "bar",
+    "club": "gay_club",
+    "description": "Тут собираются педики",
+    "name": "Endgi Show Bar",
+    "website": "https://vk.com/endgishowbar"
+  }
+},
+{
+  "type": "node",
+  "id": 6384653685,
+  "lat": 47.3005992,
+  "lon": 39.7176935,
+  "tags": {
+    "amenity": "bar",
+    "name": "Пивноff"
+  }
+},
+{
+  "type": "node",
+  "id": 6672593886,
+  "lat": 47.2257540,
+  "lon": 39.7108593,
+  "tags": {
+    "addr:housenumber": "92",
+    "addr:street": "улица Максима Горького",
+    "amenity": "bar",
+    "name:en": "BeerЛога"
+  }
+},
+{
+  "type": "node",
+  "id": 6739747624,
+  "lat": 47.2083169,
+  "lon": 39.6302156,
+  "tags": {
+    "amenity": "bar",
+    "name": "Scher Hof",
+    "opening_hours": "12:00-23:00"
+  }
+},
+{
+  "type": "node",
+  "id": 7676714689,
+  "lat": 47.2280052,
+  "lon": 39.5939970,
+  "tags": {
+    "amenity": "bar",
+    "name": "Edinburg"
+  }
+},
+{
+  "type": "node",
+  "id": 7803814785,
+  "lat": 47.2229021,
+  "lon": 39.7156555,
+  "tags": {
+    "amenity": "bar",
+    "name": "1984"
+  }
+},
+{
+  "type": "node",
+  "id": 7803838385,
+  "lat": 47.2175487,
+  "lon": 39.7203782,
+  "tags": {
+    "amenity": "bar",
+    "name:en": "craft port"
+  }
+},
+{
+  "type": "node",
+  "id": 7822483286,
+  "lat": 47.2211576,
+  "lon": 39.7154467,
+  "tags": {
+    "addr:housenumber": "67",
+    "addr:street": "улица Шаумяна",
+    "amenity": "bar",
+    "name": "Голодранец"
+  }
+},
+{
+  "type": "node",
+  "id": 8678548017,
+  "lat": 47.2891095,
+  "lon": 39.6854149,
+  "tags": {
+    "amenity": "bar",
+    "cuisine": "sausage",
+    "name": "Бар Кирича",
+    "name:en": "Bar Kiricha",
+    "opening_hours": "24/7"
+  }
+},
+{
+  "type": "way",
+  "id": 261612051,
+  "nodes": [
+    2672234537,
+    2672234522,
+    2672234653,
+    2672234660,
+    2672234666,
+    2672234667,
+    2672234657,
+    2672234656,
+    2672234537
+  ],
+  "tags": {
+    "addr:housenumber": "2А",
+    "addr:street": "Волгодонская улица",
+    "amenity": "bar",
+    "building": "yes",
+    "name": "Маринад"
+  }
+},
+{
+  "type": "node",
+  "id": 2672234522,
+  "lat": 47.2112624,
+  "lon": 39.6474239
+},
+{
+  "type": "node",
+  "id": 2672234537,
+  "lat": 47.2113082,
+  "lon": 39.6476809
+},
+{
+  "type": "node",
+  "id": 2672234653,
+  "lat": 47.2116777,
+  "lon": 39.6472519
+},
+{
+  "type": "node",
+  "id": 2672234656,
+  "lat": 47.2116804,
+  "lon": 39.6475344
+},
+{
+  "type": "node",
+  "id": 2672234657,
+  "lat": 47.2117106,
+  "lon": 39.6475828
+},
+{
+  "type": "node",
+  "id": 2672234660,
+  "lat": 47.2117180,
+  "lon": 39.6474784
+},
+{
+  "type": "node",
+  "id": 2672234666,
+  "lat": 47.2117810,
+  "lon": 39.6474489
+},
+{
+  "type": "node",
+  "id": 2672234667,
+  "lat": 47.2117912,
+  "lon": 39.6475159
+}
+
+  ]
+}

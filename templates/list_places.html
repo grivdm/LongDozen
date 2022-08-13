@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% extends 'main.html' %}
+    {% block content %}
+
+        <a href="{% url 'create_place' %}">Create Place</a>
+                <div>
+                    {%  for place in places %}
+                    <div>
+                        <h5>
+                            <a href="/place/{{place.id}}">{{ place.name }}</a>
+                        </h5>
+                    </div>
+                    {% endfor %}
+
+                </div>
+
+            {% endblock content %}
+</body>
+</html>

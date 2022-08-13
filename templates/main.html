@@ -1,0 +1,23 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Long Dozen</title>
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+    {{ form.media }}
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+    {% block content %}
+
+
+
+    {% endblock content %}
+
+</body>
+</html>
