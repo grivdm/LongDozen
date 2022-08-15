@@ -4,6 +4,7 @@ from django.urls import reverse
 from .models import User, Place
 from django.views import View
 from .forms import PlaceForm
+from django.contrib.gis.geos import Point
 # Create your views here.
 
 from django.views import generic
@@ -26,38 +27,34 @@ def place_page(request, pk):
     context = {'place': place}
     return render(request, 'place.html', context)
 
+
 def list_places_page(request):
     places = Place.objects.all()
     context = {'places': places}
     return render(request, 'list_places.html', context)
 
-def create_place(request):
-    form = PlaceForm
+
+def place_form(request):
+    form = PlaceForm()
     if request.method == 'POST':
-        print(request.POST)
+        form = PlaceForm(request.POST)
+        if form.is_valid():
+            print(form)
+            form.save()
     context = {'form': form}
     return render(request, 'place_form.html', context)
 
-# class PlaceView(View):
-#     template_name = 'list_places.html'
-#     form_class = PlaceForm
-#
-#     def get(self, request,  *args, **kwargs):
-#         form = self.form_class
-#         return render(request, self.template_name, {'form': form})
-#
-#     def post(self, request, *args, **kwargs):
-#         form = self.form_class(request.POST)
-#         if form.is_valid():
-#             form.save()
-#             return HttpResponseRedirect(reverse('home'))
-#         else:
-#             return render(request, self.template_name, {'form': form})
 
-# class PlaceView(generic.ListView):
-#     model = Place
-#     queryset = Place.objects.all()
-#     context = {'places': queryset}
+def create_place(request):
+    form = PlaceForm()
+    if request.method == 'POST':
+        form = PlaceForm(request.POST)
+        if form.is_valid():
+            print(form)
+            form.save()
+    return render(request, 'place_form.html')
+
+
 
 def search_page(request):
     pass

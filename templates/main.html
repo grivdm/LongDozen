@@ -1,4 +1,4 @@
-{% load static %}
+{% load static leaflet_tags%}
 
 
 <!DOCTYPE html>
@@ -9,6 +9,9 @@
     <title>Long Dozen</title>
     <link href="{% static 'css/styles.css' %}" rel="stylesheet">
     {{ form.media }}
+
+    {% leaflet_js plugins="forms" %}
+    {% leaflet_css plugins="forms" %}
 </head>
 <body>
     {% include 'navbar.html' %}

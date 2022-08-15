@@ -1,4 +1,5 @@
-from django.contrib.gis.db import models
+from django.contrib.gis.db import models as models_gis
+from django.db import models
 import uuid
 from django.contrib.auth.models import AbstractUser
 
@@ -40,7 +41,8 @@ class Place(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField(null=True, blank=True)
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, blank=True)
-    location = models.PointField()
+    location = models_gis.PointField()
+
 
     def __str__(self):
         return self.name

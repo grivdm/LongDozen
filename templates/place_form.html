@@ -1,28 +1,49 @@
 <!DOCTYPE html>
-
-
+{% extends 'main.html' %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-
-    <script src="Control.Geocoder.js"></script>
-    <link rel = "stylesheet" href = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
-    <script src = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
-
 </head>
-<body onload="getLocation()">
-    {%  extends 'main.html' %}
+<body >
     {% load static %}
     {% block content %}
+    {% load crispy_forms_tags %}
     <div>
         <form method="post" action="">
             {% csrf_token %}
             {{ form.as_p }}
-            <div id = "map" style = "width: 800px; height: 300px"></div>
             <input type="submit" value="Submit">
         </form>
     </div>
-        <script type="text/javascript" src={% static 'js/map.js' %}></script>{%  endblock content %}
+<script type="text/javascript">
+    window.addEventListener("map:init", function (e){
+
+        var detail = e.detail;
+
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition( function (position){
+                detail.map.setView([position.coords.latitude,position.coords.longitude], 15);
+
+            });
+        }
+        },  false);
+
+    var marker_onClick = null
+
+     window.addEventListener('map:click', function (e){
+         var detail = e.detail
+         var popLocation= e.latlng;
+         if (marker_onClick == null) {
+             marker_onClick = L.marker([e.latlng.lat, e.latlng.lng], {
+                 draggable: true,
+             })
+         }
+        marker_onClick.addTo(detail.map)
+     })
+</script>
+
+
+    {%  endblock content %}
 </body>
 </html>
