@@ -43,6 +43,9 @@ class Place(models.Model):
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, blank=True)
     location = models_gis.PointField()
 
+    class Meta:
+        ordering = ['-name']
+
 
     def __str__(self):
         return self.name

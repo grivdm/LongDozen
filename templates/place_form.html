@@ -24,22 +24,21 @@
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition( function (position){
                 detail.map.setView([position.coords.latitude,position.coords.longitude], 15);
-
+                //console.log(detail.map)
+                detail.map.removeControl(detail.map.attributionControl);
             });
         }
+        //var toolbar = L.Toolbar
+        //L.EditToolbar.removeToolbar(detail.map)
+
         },  false);
 
     var marker_onClick = null
 
      window.addEventListener('map:click', function (e){
          var detail = e.detail
-         var popLocation= e.latlng;
-         if (marker_onClick == null) {
-             marker_onClick = L.marker([e.latlng.lat, e.latlng.lng], {
-                 draggable: true,
-             })
-         }
-        marker_onClick.addTo(detail.map)
+         console.log(detail.map)
+
      })
 </script>
 

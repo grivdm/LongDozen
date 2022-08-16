@@ -16,6 +16,16 @@
 <body>
     {% include 'navbar.html' %}
 
+    {% if messages %}
+        <ul class="'messages">
+            {% for messege in messages %}
+                <li>{{ messege }}</li>
+            {% endfor %}
+
+        </ul>
+
+    {% endif %}
+
     {% block content %}
 
 

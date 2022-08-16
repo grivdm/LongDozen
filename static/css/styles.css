@@ -1,7 +1,13 @@
+*{
+    font: 1em sans-serif;
+    box-sizing: border-box;
+
+}
+
 body {
     font-family: Tahoma, serif;
     font-size: 10px;
-    color: #9cd99c;
+    color: #1e441e;
     background-color: #cfeef5;
 
 }
@@ -18,7 +24,7 @@ body {
 }
 
 .leaflet-container {  /* all maps */
-    width:  600px;
+    width:  1000px;
     height: 400px;
 }
 
@@ -30,7 +36,15 @@ body {
 .django-leaflet-raw-textarea {
     width: 100%;
 }
+.place-container{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
 
+
+.category-menu{
+    background-color: #588978 ;
+}
 /** {*/
 /*  margin: 0;*/
 /*  padding: 0;*/
