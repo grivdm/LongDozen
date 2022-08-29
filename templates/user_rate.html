@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form method="post" action="{%  url 'user_rate' %}" name='rating'>
+    {% csrf_token %}
+    <input type="hidden" value="{{ user.id }}" name="user">
+    <input type="hidden" value="{{ place.id }}" name="place_id">
+    <div class="range-wrap">
+        <div class="range-value" id="rangeV"></div>
+        <input type="range" min="1" max="12" value="{{ user_rate }}" class="slider" id="range" name="rate">
+        <label for="rate" >Your rating: {{ user_rate }}</label>
+    </div>
+    <input type="submit" value="Submit">
+</form>
+
+<script>
+    var range = document.getElementById('range');
+    var rangeV = document.getElementById('rangeV');
+
+    setValue = ()=>{
+    rangeV.innerHTML = `<span>${range.value}</span>`;
+  };
+document.addEventListener("DOMContentLoaded", setValue);
+range.addEventListener('input', setValue);
+
+</script>
+</body>
+</html>
