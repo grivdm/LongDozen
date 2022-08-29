@@ -103,7 +103,7 @@ def place_rating(pk):
     place_rate = Rate.objects.filter(place_id=pk)
     rate_amount = len(place_rate)
     rate_lst = [i.rate for i in place_rate]
-    rating = int(sum(rate_lst) / len(rate_lst))
+    rating = int(sum(rate_lst) / len(rate_lst)) if rate_lst else 0
 
     return rating, rate_amount
 
@@ -153,6 +153,7 @@ class ListPlacesView(generic.ListView):
         return context
 
 
+# @login_required(login_url='login')
 def create_place(request):
     form = PlaceForm()
     if request.method == 'POST':
