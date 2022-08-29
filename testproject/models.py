@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.contrib.gis.db import models as models_gis
 from django.db import models
 import uuid
@@ -10,12 +11,15 @@ class User(AbstractUser):
         default=uuid.uuid4,
         editable=False
     )
+    username = models.CharField(max_length=200, null=True)
+    email = models.EmailField(unique=True)
     avatar = models.ImageField(
-        upload_to='images',
         null=True,
-        blank=True,
-        default='images/def_avatar.jpg'
+        default='def_avatar.jpg'
     )
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = []
+
 
 
 class Category(models.Model):
@@ -52,13 +56,31 @@ class Place(models.Model):
 
 
 class Favorite(models.Model):
-    place_id = models.ForeignKey(Place, on_delete=models.CASCADE)
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    place = models.ForeignKey(Place, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
 
 class Rate(models.Model):
+    RATE_CHOICES = [
+        (1, '1'),
+        (2, '2'),
+        (3, '3'),
+        (4, '4'),
+        (5, '5'),
+        (6, '6'),
+        (7, '7'),
+        (8, '8'),
+        (9, '9'),
+        (10, '10'),
+        (11, '11'),
+        (12, '12'),
+    ]
     log_time = models.TimeField(auto_now_add=True)
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
-    place_id = models.ForeignKey(Place, on_delete=models.CASCADE)
-    rate = models.PositiveSmallIntegerField()
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    place = models.ForeignKey(Place, on_delete=models.CASCADE)
+    is_picked = models.BooleanField(default=False)
+    rate = models.PositiveSmallIntegerField(choices=RATE_CHOICES)
+
+    class Meta:
+        unique_together = ('user', 'place')
 

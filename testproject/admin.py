@@ -1,10 +1,18 @@
 from django.contrib import admin
-from .models import User, Place, Category
+from django import forms
+from .models import  Place, Category, Rate, Favorite
 from leaflet.admin import LeafletGeoAdmin
-
+from django.contrib.auth import get_user_model
+User = get_user_model()
 admin.site.register(Category)
+admin.site.register(Rate)
+admin.site.register(Favorite)
+admin.site.register(User)
+
 
 @admin.register(Place)
 class PlaceAdmin(LeafletGeoAdmin):
     list_display = ('id', 'name', 'location')
 
+# @admin.register(forms.)
+# class UserAdmin():

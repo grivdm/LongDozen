@@ -28,18 +28,16 @@
                 detail.map.removeControl(detail.map.attributionControl);
             });
         }
-        //var toolbar = L.Toolbar
-        //L.EditToolbar.removeToolbar(detail.map)
-
         },  false);
 
-    var marker_onClick = null
+    {#var marker_onClick = null#}
+    {##}
+    {# window.addEventListener('map:click', function (e){#}
+    {#     var detail = e.detail#}
+    {#     console.log(detail.map)#}
+    {##}
+    {# })#}
 
-     window.addEventListener('map:click', function (e){
-         var detail = e.detail
-         console.log(detail.map)
-
-     })
 </script>
 
 

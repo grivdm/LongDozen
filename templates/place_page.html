@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+{% extends 'main.html' %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Long Dozen</title>
+</head>
+<body>
+
+    {% block content %}
+        <h1>{{ place.name }}</h1>
+
+        {% include 'user_rate.html' with form=request.post%}
+
+        <br>
+
+        <h1>Рейтинг: {{ rating }} на основе {{ rate_amount }} отзывов</h1>
+
+        <div style="position: absolute; right: 10px">
+            <form method="post" action="{%  url 'favorite' %}" name='rating'>
+                {% csrf_token %}
+                <input type="hidden" value="{{ user.id }}" name="user">
+                <input type="hidden" value="{{ place.id }}" name="place_id">
+                <input type="submit" value="{% if user.id in lst_users_favorite_place %}Delete from favorites{% else %}Add to favorites{% endif %}">
+            </form>
+        </div>
+
+        <a href="{% url 'update_place' place.id  %}">Edit</a>
+        <a href="{% url 'delete_place' place.id  %}">Delete</a>
+
+
+
+
+        <div id = "map" style = "width: 600px; height: 300px"></div>
+
+
+
+
+        <script>
+
+            var mapOptions = {
+            center: [{{ place.location.coords.1 }},{{ place.location.coords.0 }}],
+            zoom: 15
+            }
+            var map = new L.map('map', mapOptions);
+            var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+            map.addLayer(layer);
+            var marker = L.marker([{{ place.location.coords.1 }},{{ place.location.coords.0 }}])
+            marker.addTo(map)
+
+
+
+
+        </script>
+
+    {% endblock content %}
+
+
+
+</body>
+</html>

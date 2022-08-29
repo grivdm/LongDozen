@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 
+    {% extends 'main.html' %}
 
 <html lang="en">
 <head>
@@ -7,38 +8,28 @@
     <title>Title</title>
 </head>
 <body>
-    {% extends 'main.html' %}
     {% block content %}
 
 
         <div class="place-container">
-
-
             <div id="category-menu">
                 <h3>Categories</h3>
                 <hr>
                 <a href="{% url 'list_places' %}">ALL</a>
                 {% for category in categories %}
                     <div>
-
                         <a href="{% url 'list_places' %}?q={{ category.name }}">{{ category }}</a>
-
-
                     </div>
-
-
                 {% endfor %}
             </div>
-
-
             <div>
                 <a href="{% url 'create_place' %}">Create Place</a>
-                <h3>{{ places.count }}</h3>
-
+                <h3>{{ list_places.count }}</h3>
                     <div>
-                        {% for place in places %}
+                        {% for place in list_places %}
                             <div>
-                                <h5><a href="/place/{{place.id}}">{{ place.name }}</a></h5>
+                                <h2><a href="/place/{{place.id}}">{{ place.name }}</a></h2>
+
                                 <h4>{{ place.category }}</h4>
                                 <hr>
                             </div>
