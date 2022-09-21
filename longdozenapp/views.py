@@ -212,4 +212,3 @@ def add_del_favorite(request):
             obj.delete()
 
     return redirect('place', place_id)
-

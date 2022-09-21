@@ -21,4 +21,3 @@ class PlaceForm(ModelForm):
         model = Place
         fields = ['name', 'description', 'category', 'location']
         widgets = {'location': LeafletWidget()}
-

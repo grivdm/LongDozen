@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.gis',
-    'testproject.apps.TestprojectConfig',
+    'longdozenapp',
     'crispy_forms',
     'leaflet'
 ]
@@ -99,7 +99,7 @@ DATABASES = {
 
     }
 }
-AUTH_USER_MODEL = 'testproject.User'
+AUTH_USER_MODEL = 'longdozenapp.User'
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
