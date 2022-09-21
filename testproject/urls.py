@@ -1,4 +1,4 @@
-from django.urls import path, re_path
+from django.urls import path
 from . import views
 from django.conf import settings
 from django.conf.urls.static import static
@@ -12,7 +12,7 @@ urlpatterns = [
     path('user/<str:pk>/', views.user_page, name="user_page"),
     path('user/user-update', views.update_user, name="update_user"),
     path('user/delete-user', views.delete_user, name='delete_user'),
-    # path('user_location', views.user_location, name='user_location'),
+    path('user_location/', views.user_location, name='user_location'),
 
     path('place/<str:pk>/', views.place_page, name="place"),
     path('place/', views.ListPlacesView.as_view(), name='list_places'),
@@ -20,7 +20,7 @@ urlpatterns = [
     path('place/update-place/<str:pk>/', views.update_place, name='update_place'),
     path('place/delete-place/<str:pk>/', views.delete_place, name='delete_place'),
 
-    path('user_rate', views.user_rate, name='user_rate'),
+    path('user_grade', views.user_grade, name='user_grade'),
     path('favorite', views.add_del_favorite, name='favorite'),
 
 ]

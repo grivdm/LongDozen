@@ -2,14 +2,15 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
-from django.http import HttpResponse, HttpResponseRedirect
-from django.urls import reverse
-from .models import User, Place, Category, Favorite, Rate
-from django.views import View, generic
+from django.http import HttpResponse
+from .models import User, Place, Category, Favorite, Grade
+from django.views import generic
 from .forms import PlaceForm, CustomUserCreationForm, CustomUserUpdateForm
 from django.db.models import Q
-from django.contrib.gis.measure import D
+from django.contrib.gis.db.models.functions import Distance
 from django.contrib.gis.geos import *
+from .utils import place_rating
+from django.db.models import Avg
 
 
 def navbar(request, pk):
@@ -98,21 +99,21 @@ def delete_user(request):
     return render(request, 'delete_user.html')
 
 
-# -------------------------------------------
-def place_rating(pk):
-    place_rate = Rate.objects.filter(place_id=pk)
-    rate_amount = len(place_rate)
-    rate_lst = [i.rate for i in place_rate]
-    rating = int(sum(rate_lst) / len(rate_lst)) if rate_lst else 0
+def user_location(request):
+    if request.method == 'POST':
+        request.session['latitude'] = request.POST.get('lat')
+        request.session['longitude'] = request.POST.get('lng')
+        request.session.save()
+        return HttpResponse(status=200)
 
-    return rating, rate_amount
+# -------------------------------------------
 
 
 def place_page(request, pk):
     place = Place.objects.get(id=pk)
     user_id = request.user.id
     try:
-        user_rate = Rate.objects.get(user=user_id, place=place.id).rate
+        user_rate = Grade.objects.get(user=user_id, place=place.id).grade
     except:
         user_rate = 0
 
@@ -129,23 +130,25 @@ def place_page(request, pk):
     return render(request, 'place_page.html', context)
 
 
-class PlaceView(View):
-    place = None
-    pass
-
-
 class ListPlacesView(generic.ListView):
+
     model = Place
     context_object_name = 'list_places'
     template_name = 'list_places.html'
 
     def get_queryset(self):
+        latitude = self.request.session.get('latitude', 0)
+        longitude = self.request.session.get('longitude', 0)
+        user_spot = Point(float(longitude), float(latitude), srid=4326)
         q = self.request.GET.get('q') if self.request.GET.get('q') is not None else ''
         return Place.objects.filter(
             Q(category__name__icontains=q) |
             Q(name__icontains=q) |
             Q(description__icontains=q)
-        )
+        ).annotate(
+            distance=Distance('location', user_spot),
+            rating=Avg('grade__grade')
+        ).order_by('distance')
 
     def get_context_data(self, **kwargs):
         context = super(ListPlacesView, self).get_context_data(**kwargs)
@@ -153,7 +156,7 @@ class ListPlacesView(generic.ListView):
         return context
 
 
-# @login_required(login_url='login')
+@login_required(login_url='login')
 def create_place(request):
     form = PlaceForm()
     if request.method == 'POST':
@@ -186,19 +189,15 @@ def delete_place(request, pk):
     return render(request, 'delete_place.html')
 
 
-def search_page(request):
-    pass
-
-
 # ------------------------------------------
 
 @login_required(login_url='login')
-def user_rate(request):
+def user_grade(request):
     user_id = request.user.id
     place_id = request.POST.get('place_id')
     if request.method == 'POST':
-        rate = request.POST.get('rate')
-        Rate.objects.update_or_create(user_id=user_id, place_id=place_id, defaults={'rate': rate})
+        grade = request.POST.get('grade')
+        Grade.objects.update_or_create(user_id=user_id, place_id=place_id, defaults={'grade': grade})
 
     return redirect('place', place_id)
 

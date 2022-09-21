@@ -51,10 +51,11 @@ body {
     grid-template-columns: 1fr 3fr 1fr;
 }
 
-.user-page-image{
 
-
-}
+/*.list_places_component{*/
+/*    display: ;*/
+/*    grid-template-columns: 1fr 1fr*/
+/*}*/
 /** {*/
 /*  margin: 0;*/
 /*  padding: 0;*/

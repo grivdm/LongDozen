@@ -1,5 +1,3 @@
-
-
 from pathlib import Path
 import os
 
@@ -53,6 +51,7 @@ GDAL_LIBRARY_PATH = r"C:\OSGeo4W\bin\gdal305.dll"
 
 GEOS_LIBRARY_PATH = r"C:\OSGeo4W\bin\geos_c.dll"
 
+SESSION_COOKIE_SECURE = True
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -165,14 +164,5 @@ LEAFLET_CONFIG = {
     'ATTRIBUTION_PREFIX': 'Powered by django-leaflet',
     'MINIMAP': False,
     'RESET_VIEW': False,
-    # 'NO_GLOBALS': False,
-    'PLUGINS': {
-        # 'forms': {
-        #     'js': ['/static/collect/leaflet_geocoder/geocoder.js',
-        #            '/static/collect/Leaflet_Coordinates/Leaflet.Coordinates-0.1.5.min.js',
-        #            '/static/collect/js_admin/leaflet_widget.js'],
-        #     'css': ['/static/collect/leaflet_geocoder/geocoder.css',
-        #             '/static/collect/Leaflet_Coordinates/Leaflet.Coordinates-0.1.5.css'],
-        # },
-    },
+    'PLUGINS': {},
 }

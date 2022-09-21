@@ -14,6 +14,8 @@
     {% leaflet_css plugins="forms" %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="{% static 'js/user_location.js' %}"></script>
+
 </head>
 <body>
     {% include 'navbar.html' %}
@@ -29,7 +31,7 @@
     {% endif %}
 
     {% block content %}
-
+    <input type="hidden" value="{{ user.user_location }}" name="user_location">
 
 
     {% endblock content %}

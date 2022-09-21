@@ -24,19 +24,11 @@
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition( function (position){
                 detail.map.setView([position.coords.latitude,position.coords.longitude], 15);
-                //console.log(detail.map)
                 detail.map.removeControl(detail.map.attributionControl);
             });
         }
         },  false);
 
-    {#var marker_onClick = null#}
-    {##}
-    {# window.addEventListener('map:click', function (e){#}
-    {#     var detail = e.detail#}
-    {#     console.log(detail.map)#}
-    {##}
-    {# })#}
 
 </script>
 

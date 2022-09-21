@@ -1,0 +1,18 @@
+
+<body>
+
+    <div>
+        {% for place in list_places %}
+            <div>
+                <h2><a href="/place/{{ place.id }}">{{ place.name }}</a></h2>
+
+                <p>{{ place.distance.km | floatformat:3 }} km from you </p>
+                <p>Rating:{{ place.rating | floatformat:0}}  </p>
+                <p>{{ place.category }}</p>
+                <hr>
+            </div>
+
+        {% endfor %}
+
+    </div>
+</body>

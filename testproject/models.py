@@ -21,15 +21,7 @@ class User(AbstractUser):
     REQUIRED_FIELDS = []
 
 
-
 class Category(models.Model):
-    name = models.CharField(max_length=50)
-
-    def __str__(self):
-        return self.name
-
-
-class City(models.Model):
     name = models.CharField(max_length=50)
 
     def __str__(self):
@@ -51,17 +43,13 @@ class Place(models.Model):
         ordering = ['-name']
 
 
-    def __str__(self):
-        return self.name
-
-
 class Favorite(models.Model):
     place = models.ForeignKey(Place, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
 
-class Rate(models.Model):
-    RATE_CHOICES = [
+class Grade(models.Model):
+    GRADE_CHOICES = [
         (1, '1'),
         (2, '2'),
         (3, '3'),
@@ -79,8 +67,7 @@ class Rate(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     place = models.ForeignKey(Place, on_delete=models.CASCADE)
     is_picked = models.BooleanField(default=False)
-    rate = models.PositiveSmallIntegerField(choices=RATE_CHOICES)
+    grade = models.PositiveSmallIntegerField(choices=GRADE_CHOICES)
 
     class Meta:
         unique_together = ('user', 'place')
-
