@@ -11,14 +11,14 @@ class User(AbstractUser):
         default=uuid.uuid4,
         editable=False
     )
-    username = models.CharField(max_length=200, null=True)
+    username = models.CharField(max_length=200, null=True, blank=True)
     email = models.EmailField(unique=True)
     avatar = models.ImageField(
         null=True,
         default='def_avatar.jpg'
     )
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = []
+    REQUIRED_FIELDS = ['username']
 
 
 class Category(models.Model):
@@ -45,7 +45,7 @@ class Place(models.Model):
 
 class Favorite(models.Model):
     place = models.ForeignKey(Place, on_delete=models.CASCADE)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='favorite_places')
 
 
 class Grade(models.Model):
@@ -64,8 +64,8 @@ class Grade(models.Model):
         (12, '12'),
     ]
     log_time = models.TimeField(auto_now_add=True)
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    place = models.ForeignKey(Place, on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='grades')
+    place = models.ForeignKey(Place, on_delete=models.CASCADE, related_name='grades')
     is_picked = models.BooleanField(default=False)
     grade = models.PositiveSmallIntegerField(choices=GRADE_CHOICES)
 

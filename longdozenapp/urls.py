@@ -14,11 +14,11 @@ urlpatterns = [
     path('user/delete-user', views.delete_user, name='delete_user'),
     path('user_location/', views.user_location, name='user_location'),
 
-    path('place/<str:pk>/', views.place_page, name="place"),
+    path('place/<str:pk>/', views.PlacePageView.as_view(), name="place_page"),
     path('place/', views.ListPlacesView.as_view(), name='list_places'),
-    path('place/create-place', views.create_place, name='create_place'),
-    path('place/update-place/<str:pk>/', views.update_place, name='update_place'),
-    path('place/delete-place/<str:pk>/', views.delete_place, name='delete_place'),
+    path('place/create-place', views.CreatePlaceView.as_view(), name='create_place'),
+    path('place/<str:pk>/update', views.UpdatePlaceView.as_view(), name='update_place'),
+    path('place/<str:pk>/delete', views.DeletePlaceView.as_view(), name='delete_place'),
 
     path('user_grade', views.user_grade, name='user_grade'),
     path('favorite', views.add_del_favorite, name='favorite'),

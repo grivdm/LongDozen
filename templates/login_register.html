@@ -1,50 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+{% extends 'main.html' %}
+{% load crispy_forms_tags %}
 <body>
 
-    {% extends 'main.html' %}
 
     {% block content %}
 
-        {% if page == 'login' %}
-            <div>
-                <form method="POST" action="">
+            {% if page == 'login' %}
+                <div class=" border text-center container bg-light shadow-sm py-2">
+                    <form method="POST" action="">
+                        {% csrf_token %}
+                        <div class="my-1">
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email:</label>
+                                <input type="text" class="form-control" id="email" name="email" placeholder="Enter Email" />
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password:</label>
+                                <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password" />
+                            </div>
+                            <div class="mb-3">
+                                <input type="submit" value="Submit" class="btn btn-success" />
+                            </div>
+                        </div>
+                    </form>
 
-                {% csrf_token %}
-                <label>Email</label>
-                <input type="text" name="email" placeholder="Enter Email" />
+                    <div>
+                        <p>Haven't signed up yet ?</p>
+                        <a href="{% url 'signup' %}"><button class="btn btn-primary">Sign Up</button></a>
+                    </div>
+                </div>
 
-                <label>Password</label>
-                <input type="password" name="password" placeholder="Enter Password" />
 
-                <input  type="submit" value="Sign In" />
-                </form>
-            </div>
-            <div>
-                <p>Haven't signed up yet ?</p>
 
-                <a href="{% url 'signup' %}"><button>Sign Up</button></a>
-            </div>
-
-        {% else %}
-
-            <div>
-                <form method="POST" action="">
-                    {% csrf_token %}
-                    {{ form.as_p }}
-                    <input type="submit" value="Register" />
-                </form>
-            </div>
-            <div>
-                <p>Already signed up?</p>
-
-                <a href="{% url 'login' %}"><button>Sign In</button></a>
-            </div>
-        {% endif %}
+            {% else %}
+                <div class=" border text-center container bg-light shadow-sm py-2">
+                    <div class="form-label">
+                        <form method="POST" action="">
+                            {% csrf_token %}
+                            {{ form | crispy }}
+                            <input type="submit" class="btn btn-success" value="Register" />
+                        </form>
+                    </div>
+                    <div>
+                        <p>Already signed up?</p>
+                        <a href="{% url 'login' %}"><button class="btn btn-primary">Log In</button></a>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
     {% endblock content %}
 
 </body>

@@ -1,41 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Long Dozen</title>
-</head>
 <body>
-    <div class="navbar-container">
-        <div id="navbar-logo">
-            <a href="{% url 'home' %}">
-                <h1>Long Dozen</h1>
-            </a>
-            <a href="{{ request.META.HTTP_REFERER }}">Back</a>
-        </div>
+
+    <nav class="navbar sticky-top navbar-light"  style="background: #eff4ea">
+
+         <div class="container-fluid">
 
 
-
-        <div>
-            <form method="GET" action="{% url 'list_places' %}">
-                <label>
-                    <input type="text" name="q" placeholder="Search Places.." />
-                </label>
-            </form>
-        </div>
+                    <div>
+                        <a href="{% url 'home' %}">
+                            Long Dozen
+                        </a>
+                    </div>
 
 
-        <div style="position: absolute; right: 10px">
-            {% if request.user.is_authenticated %}
-                <a href="{% url 'user_page' user.id%} ">{{ user.username }}</a>
-                <br>
-                <a href="{% url 'logout' %}">LogOut</a>
-            {% else %}
-                <a href="{% url 'login' %}">LogIn</a>
-            {% endif %}
-        </div>
+                    <div>
+                        <form method="GET" action="{% url 'list_places' %}">
+                            <label>
+                                <input class="form-control" type="text" name="q" placeholder="Search Places.." />
+                            </label>
+                        </form>
+                    </div>
 
 
-    </div>
-<hr>
+                     <div class="d-flex">
+                        {% if user.is_authenticated %}
+                            <a href="{% url 'user_page' user.id%} " class="btn btn-outline-dark me-1">{{ user.username }}</a>
+                            <br>
+                            <a href="{% url 'logout' %}" class="btn btn-outline-dark me-1">LogOut</a>
+                        {% else %}
+                            <a href="{% url 'login' %}" class="btn btn-outline-dark me-1">LogIn</a>
+                        {% endif %}
+                    </div>
+         </div>
+
+    </nav>
+
+<br>
 </body>
+
 </html>

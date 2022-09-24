@@ -15,14 +15,19 @@
 
         <br>
 
-        <h1>Rating: {{ rating }} based on {{ rate_amount }} reviews</h1>
-
+        <div>
+            {% if place.rating %}
+                Rating: {{ place.rating | floatformat:0 }} based on {{ place.grade_count }} reviews
+                {% else %}
+                No grades yet
+            {% endif %}
+        </div>
         <div style="position: absolute; right: 10px">
             <form method="post" action="{%  url 'favorite' %}" name='rating'>
                 {% csrf_token %}
                 <input type="hidden" value="{{ user.id }}" name="user">
                 <input type="hidden" value="{{ place.id }}" name="place_id">
-                <input type="submit" value="{% if user.id in lst_users_favorite_place %}Delete from favorites{% else %}Add to favorites{% endif %}">
+                <input type="submit" value="{% if is_favorite %}Delete from favorites{% else %}Add to favorites{% endif %}">
             </form>
         </div>
 

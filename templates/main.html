@@ -4,37 +4,33 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <title>Long Dozen</title>
-    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
-    {{ form.media }}
+    <head>
+        <meta charset="UTF-8">
+        <title>Long Dozen</title>
+        <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+        {{ form.media }}
 
-    {% leaflet_js plugins="forms" %}
-    {% leaflet_css plugins="forms" %}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="{% static 'js/user_location.js' %}"></script>
+        {% leaflet_js plugins="forms" %}
+        {% leaflet_css plugins="forms" %}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="{% static 'js/user_location.js' %}"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    </head>
+    <body>
 
-</head>
-<body>
-    {% include 'navbar.html' %}
+        {% include 'navbar.html' %}
 
-    {% if messages %}
-        <ul class="'messages">
-            {% for messege in messages %}
-                <li>{{ messege }}</li>
-            {% endfor %}
-
-        </ul>
-
-    {% endif %}
-
-    {% block content %}
-    <input type="hidden" value="{{ user.user_location }}" name="user_location">
+        {% if messages %}
+                {% for messege in messages %}
+                    <p class="alert alert-danger">{{ messege }}</p>
+                {% endfor %}
+        {% endif %}
 
 
-    {% endblock content %}
+            {% block content %}
 
-</body>
+            {% endblock content %}
+    </body>
 </html>

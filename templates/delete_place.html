@@ -2,16 +2,14 @@
 <html lang="en">
 
 {% extends 'main.html' %}
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+
 <body>
 
     {% block content %}
 
         <form method="POST" action="">
             {% csrf_token %}
+            <p>You are going to delete "{{ place.name }}"</p>
             <p>Are you sure about that ?</p>
             <a href="{{ request.META.HTTP_REFERER }}">GO BACK</a>
             <input type="submit" value="Confirm">

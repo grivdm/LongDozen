@@ -16,23 +16,22 @@
             <input type="submit" value="Submit">
         </form>
     </div>
-<script type="text/javascript">
-    window.addEventListener("map:init", function (e){
+    <script type="text/javascript">
+        window.addEventListener("map:init", function (e){
 
-        var detail = e.detail;
+            var detail = e.detail;
 
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition( function (position){
-                detail.map.setView([position.coords.latitude,position.coords.longitude], 15);
-                detail.map.removeControl(detail.map.attributionControl);
-            });
-        }
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition( function (position){
+                    detail.map.setView([position.coords.latitude,position.coords.longitude], 15);
+                    detail.map.removeControl(detail.map.attributionControl);
+                });
+            }
         },  false);
 
-
-</script>
-
+    </script>
 
     {%  endblock content %}
+
 </body>
 </html>

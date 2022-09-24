@@ -1,87 +1,62 @@
-*{
-    font: 1em sans-serif;
-    box-sizing: border-box;
+/**{*/
+/*    font: 1em sans-serif;*/
+/*    box-sizing: border-box;*/
 
-}
-
-body {
-    font-family: sans-serif, serif;
-    font-size: 10px;
-    color: #1e441e;
-    background-color: #cfeef5;
-
-}
-
-.block {
-    padding: 10px;
-    width: 100px;
-    height: 100px;
-    float: left;
-    margin: 10px;
-    background-color: #e7d7ff;
-    box-shadow: 0 0 7px 1px #cb97c6;
-    color: rgb(140, 84, 171);
-}
-
-.leaflet-container {  /* all maps */
-    width:  1000px;
-    height: 400px;
-}
-
-#specialbigmap {
-    height: 800px;
-}
-
-/* Resize the "display_raw" textbox */
-.django-leaflet-raw-textarea {
-    width: 100%;
-}
-.place-container{
-    display: grid;
-    grid-template-columns: 1fr 4fr;
-}
-
-.user-page-container{
-    display: grid;
-    grid-template-columns: 1fr 3fr 1fr;
-}
-
-.navbar-container{
-    display: grid;
-    grid-template-columns: 1fr 3fr 1fr;
-}
-
-
-/*.list_places_component{*/
-/*    display: ;*/
-/*    grid-template-columns: 1fr 1fr*/
-/*}*/
-/** {*/
-/*  margin: 0;*/
-/*  padding: 0;*/
-/*  box-sizing: border-box;*/
 /*}*/
 
 /*body {*/
-/*  min-height: 100vh;*/
-/*  display: grid;*/
-/*  place-content: center;*/
-/*  place-items: center;*/
-/*  background-color: rgb(241, 241, 241);*/
+/*    font-family: sans-serif, serif;*/
+/*    font-size: 10px;*/
+/*    color: #1e441e;*/
+/*    background-color: #cfeef5;*/
+
 /*}*/
 
-/*#map {*/
-/*  width: 480px;*/
-/*  height: 320px;*/
-/*  border-radius: 4px;*/
-/*  box-shadow: 0 0 1px #222;*/
+/*.block {*/
+/*    padding: 10px;*/
+/*    width: 100px;*/
+/*    height: 100px;*/
+/*    float: left;*/
+/*    margin: 10px;*/
+/*    background-color: #e7d7ff;*/
+/*    box-shadow: 0 0 7px 1px #cb97c6;*/
+/*    color: rgb(140, 84, 171);*/
 /*}*/
 
-/*button {*/
-/*  padding: 0.25em 0.75em;*/
-/*  margin: 1em 0.5em;*/
-/*  cursor: pointer;*/
-/*  user-select: none;*/
+/*.leaflet-container {  !* all maps *!*/
+/*    width:  1000px;*/
+/*    height: 400px;*/
 /*}*/
 
+/*#specialbigmap {*/
+/*    height: 800px;*/
+/*}*/
+
+/*!* Resize the "display_raw" textbox *!*/
+/*.django-leaflet-raw-textarea {*/
+/*    width: 100%;*/
+/*}*/
+/*.place-container{*/
+/*    display: grid;*/
+/*    grid-template-columns: 1fr 4fr;*/
+/*}*/
+
+/*.user-page-container{*/
+/*    display: grid;*/
+/*    grid-template-columns: 1fr 3fr 1fr;*/
+/*}*/
+
+/*.navbar-container{*/
+/*    display: grid;*/
+/*    grid-template-columns: 1fr 3fr 1fr;*/
+/*}*/
+
+/*.selector-for-some-widget {*/
+/*  box-sizing: content-box;*/
+/*}*/
+
+
+/** {*/
+/*  box-sizing: border-box;*/
+/*}*/
 
