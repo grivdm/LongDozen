@@ -6,34 +6,37 @@
     {% block content %}
 
             {% if page == 'login' %}
-                <div class=" border text-center container bg-light shadow-sm py-2">
-                    <form method="POST" action="">
-                        {% csrf_token %}
-                        <div class="my-1">
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Email:</label>
-                                <input type="text" class="form-control" id="email" name="email" placeholder="Enter Email" />
+                <div class="container border text-center rounded bg-light shadow py-2 col-12 col-md-8 col-lg-6 col-xl-5">
+                    <div class="">
+                        <form method="POST" action="">
+                            {% csrf_token %}
+                            <div class="my-3">
+                                <div class="mb-3 ">
+                                    <label for="email" class="form-outline">Email:</label>
+                                    <input type="text" class="form-control" id="email" name="email" placeholder="Enter Email" />
+                                </div>
+                                <div class="mb-3">
+                                    <label for="password" class="form-label">Password:</label>
+                                    <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password" />
+                                </div>
+                                <div class="mb-3">
+                                    <input type="submit" value="Submit" class="btn btn-success" />
+    {#                                <button type="button" class="btn btn-danger" >Forgot password </button>#}
+                                </div>
                             </div>
-                            <div class="mb-3">
-                                <label for="password" class="form-label">Password:</label>
-                                <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password" />
-                            </div>
-                            <div class="mb-3">
-                                <input type="submit" value="Submit" class="btn btn-success" />
-                            </div>
-                        </div>
-                    </form>
+                        </form>
 
-                    <div>
-                        <p>Haven't signed up yet ?</p>
-                        <a href="{% url 'signup' %}"><button class="btn btn-primary">Sign Up</button></a>
+                        <div>
+                            <p>Haven't signed up yet ?</p>
+                            <a href="{% url 'signup' %}"><button class="btn btn-primary">Sign Up</button></a>
+                        </div>
                     </div>
                 </div>
 
 
 
             {% else %}
-                <div class=" border text-center container bg-light shadow-sm py-2">
+                <div class="container border text-center rounded  bg-light shadow py-2 col-12 col-md-8 col-lg-6 col-xl-5">
                     <div class="form-label">
                         <form method="POST" action="">
                             {% csrf_token %}
@@ -41,8 +44,8 @@
                             <input type="submit" class="btn btn-success" value="Register" />
                         </form>
                     </div>
-                    <div>
-                        <p>Already signed up?</p>
+                    <div class="my-3">
+                        <p>Already a member?</p>
                         <a href="{% url 'login' %}"><button class="btn btn-primary">Log In</button></a>
                     </div>
                 </div>

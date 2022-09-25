@@ -2,17 +2,13 @@
 <html lang="en">
 <body>
 
-    <nav class="navbar sticky-top navbar-light"  style="background: #eff4ea">
-
+    <nav class="navbar sticky-top navbar-light border-bottom"  style="background: #eff4ea">
          <div class="container-fluid">
-
-
                     <div>
-                        <a href="{% url 'home' %}">
+                        <a class="navbar-brand h1 mb-5" href="{% url 'home' %}" style="color: #c5530c">
                             Long Dozen
                         </a>
                     </div>
-
 
                     <div>
                         <form method="GET" action="{% url 'list_places' %}">
@@ -21,7 +17,6 @@
                             </label>
                         </form>
                     </div>
-
 
                      <div class="d-flex">
                         {% if user.is_authenticated %}

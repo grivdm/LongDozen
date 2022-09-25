@@ -4,60 +4,27 @@
 
 <html lang="en">
 
-<body >
+<body>
     {% block content %}
         <div class="container-fluid">
             <div class="row">
-                <div class="col-2" id="category-menu">
-                    <h3>Categories</h3>
-                    <hr>
-                    <a href="{% url 'list_places' %}">ALL</a>
-                    {% for category in categories %}
-                        <div>
-                            <a href="{% url 'list_places' %}?q={{ category.name }}">{{ category }}</a>
-                        </div>
-                    {% endfor %}
+                <div class="col-2 sid">
+                    {% include 'sidebar_component.html' %}
                 </div>
 
-                <div class="col-10">
+                <div class="col-9 container-fluid">
                     <div>
-                        <a href="{% url 'create_place' %}">Create Place</a>
-                        <h3>{{ page_obj.paginator.count }}</h3>
+                        <div class="container-fluid">
+                            <div class="card border my-2 shadow-sm bg-white bg-opacity-25 rounded">
+                                <div class="card-body">
+                                    <p class="card-text">There are {{ count_places }} places on the list, I would love you to add <a href="{% url 'create_place' %}">one more</a></p>
+                                </div>
+                            </div>
+                        </div>
                         {% include 'list_places_component.html' %}
+
                     </div>
-
-                    <nav class="pagination">
-                        <ul class="pagination justify-content-center">
-
-                            {% if page_obj.has_previous %}
-                                <li class="page-item">
-                                    <a class="page-link" href="?page=1">first</a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="?page={{ page_obj.previous_page_number }}">{{ page_obj.previous_page_number }}</a>
-                                </li>
-                            {% else %}
-                                <li class="page-item disabled">
-                                    <a class="page-link">first</a>
-                                </li>
-                            {% endif %}
-                            <li class="page-item active">
-                                <a class="page-link" href="#">{{ page_obj.number }}</a>
-                            </li>
-                            {% if page_obj.has_next %}
-                                <li class="page-item">
-                                    <a class="page-link" href="?page={{ page_obj.next_page_number }}">{{ page_obj.next_page_number }}</a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">last</a>
-                                </li>
-                            {% else %}
-                                <li class="page-item disabled">
-                                    <a class="page-link">last</a>
-                                </li>
-                            {% endif %}
-                        </ul>
-                    </nav>
+                    {% include 'pagination_buttons_component.html' %}
                 </div>
             </div>
         </div>

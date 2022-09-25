@@ -56,7 +56,16 @@
 /*}*/
 
 
-/** {*/
-/*  box-sizing: border-box;*/
-/*}*/
+* {
+  box-sizing: border-box;
+}
 
+
+
+body {
+  background-color: #f6e9e6;
+}
+
+/*.form-control{*/
+/*  background-color: #fff9f8;*/
+/*}*/

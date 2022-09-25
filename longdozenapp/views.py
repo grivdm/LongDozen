@@ -122,9 +122,13 @@ class PlacePageView(generic.DetailView):
     template_name = 'place_page.html'
 
     def get_queryset(self):
+        latitude = self.request.session.get('latitude', 0)
+        longitude = self.request.session.get('longitude', 0)
+        user_spot = Point(float(longitude), float(latitude), srid=4326)
         return self.model.objects.annotate(
             rating=Avg('grades__grade'),
-            grade_count=Count('grades__grade')
+            grade_count=Count('grades__grade'),
+            distance = Distance('location', user_spot)
         )
 
     def get_context_data(self, **kwargs):
@@ -161,6 +165,7 @@ class ListPlacesView(generic.ListView):
     def get_context_data(self, **kwargs):
         context = super(ListPlacesView, self).get_context_data(**kwargs)
         context['categories'] = Category.objects.all()
+        context['count_places'] = Place.objects.all().count()
         return context
 
 

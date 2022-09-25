@@ -6,7 +6,7 @@
     <input type="hidden" value="{{ place.id }}" name="place_id">
     <div class="range-wrap">
         <div class="range-value" id="rangeV"></div>
-        <input type="range" min="1" max="12" value="{{ user_grade }}" class="slider" id="range" name="grade">
+        <input type="range" class="form-range" min="1" max="12" value="{{ user_grade }}"  id="range" name="grade">
         <label for="grade" >Your grade: {{ user_grade }}</label>
     </div>
     <input type="submit" value="Submit">
