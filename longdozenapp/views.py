@@ -128,7 +128,7 @@ class PlacePageView(generic.DetailView):
         return self.model.objects.annotate(
             rating=Avg('grades__grade'),
             grade_count=Count('grades__grade'),
-            distance = Distance('location', user_spot)
+            distance=Distance('location', user_spot)
         )
 
     def get_context_data(self, **kwargs):

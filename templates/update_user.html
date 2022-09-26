@@ -1,21 +1,29 @@
 <!DOCTYPE html>
 
 {% extends 'main.html' %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+{% load crispy_forms_tags crispy_forms_filters %}
 <body>
 
     {% block content %}
-        <form method="post" action="" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Submit">
-        </form>
+{#        <form method="post" action="" enctype="multipart/form-data">#}
+{#        {% csrf_token %}#}
+{#        {{ form.as_p }}#}
+{#        <input type="submit" value="Submit">#}
+{#        </form>#}
 
-        <a href="{% url 'delete_user' %}"><button>Delete user</button></a>
+
+
+        <div class="container border text-center rounded  bg-light shadow py-2 col-12 col-md-8 col-lg-6 col-xl-5">
+                    <div class="form-label">
+                        <form method="POST" action="">
+                            {% csrf_token %}
+                            <div>
+                                {{ form | crispy }}
+                            </div>
+                            <input type="submit" class="btn btn-success m-2" value="Update" />
+                        </form>
+                    </div>
+        <a href="{% url 'delete_user' %}"><button class="btn btn-danger">Delete user</button></a>
 
     {% endblock content %}
 

@@ -1,26 +1,22 @@
 <body>
 
-<form method="post" action="{%  url 'user_grade' %}" name='rating'>
-    {% csrf_token %}
-    <input type="hidden" value="{{ user.id }}" name="user">
-    <input type="hidden" value="{{ place.id }}" name="place_id">
-    <div class="range-wrap">
-        <div class="range-value" id="rangeV"></div>
-        <input type="range" class="form-range" min="1" max="12" value="{{ user_grade }}"  id="range" name="grade">
-        <label for="grade" >Your grade: {{ user_grade }}</label>
-    </div>
-    <input type="submit" value="Submit">
-</form>
+    <form class="text-center" method="post" action="{%  url 'user_grade' %}" name='rating'>
+        {% csrf_token %}
+        <input type="hidden" value="{{ user.id }}" name="user">
+        <input type="hidden" value="{{ place.id }}" name="place_id">
+        <div class="range-wrap container">
+            <div class="range-value" id="rangeV"></div>
+            <input type="range" class="form-range" min="1" max="12" value="{{ user_grade }}"  id="range" name="grade">
+        </div>
+        <input class="btn btn-light" type="submit" value="Submit">
+    </form>
 
-<script>
-    var range = document.getElementById('range');
-    var rangeV = document.getElementById('rangeV');
-
-    setValue = ()=>{
-    rangeV.innerHTML = `<span>${range.value}</span>`;
-  };
-document.addEventListener("DOMContentLoaded", setValue);
-range.addEventListener('input', setValue);
-
-</script>
+    <script>
+        var range = document.getElementById('range');
+        var output = document.getElementById('user_grade')
+        setValue = ()=>{
+        output.innerHTML = `<span>${range.value}</span>`;
+        };
+        range.addEventListener('input', setValue);
+    </script>
 </body>

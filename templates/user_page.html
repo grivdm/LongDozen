@@ -2,34 +2,33 @@
 
 {% extends 'main.html'%}
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
 <body>
     {% block content %}
-        <div class="user-page-container">
+        <div class="container">
 
-            <div>
-                <img src="{{ user.avatar.url }}" alt="user-avatar" width="150" height="150">
-                <div class="avatar--large">
-                    <p>{{ user.username }}</p>
-                </div>
-            </div>
-            <div id="favorite-places">
-            <p>Your favorite places</p>
-                {% for favorite in favorite_places %}
-                    <div>
-                          <h2><a href="/place/{{favorite.place.id}}">{{favorite.place.name}}</a></h2>
+
+            <div class="p-3 border shadow-sm bg-white bg-opacity-50 rounded">
+                <div class="row">
+                    <div class="col-3 p-2 m-2">
+                        <img class="img-thumbnail" src="{{ user.avatar.url }}" alt="user-avatar">
+                        <h3 class="fw-bold text-center">{{ user.username }}</h3>
+                        <div class="text-center">
+                            {% if request.user == user %}
+                            <a class="link-info" href="{% url 'update_user' %}">Edit</a>
+                            {% endif %}
+                        </div>
                     </div>
-                {% endfor %}
-            </div>
-
-            <div>
-                {% if request.user == user %}
-                <a href="{% url 'update_user' %}">Edit</a>
-                {% endif %}
+                    <div class="col-4 p-2 m-2">
+                        <div id="favorite-places">
+                        <p>Your favorite places</p>
+                            <ul>
+                                {% for favorite in favorite_places %}
+                                    <a  href="/place/{{favorite.place.id}}">{{favorite.place.name}}</a>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     {% endblock content %}

@@ -1,37 +1,38 @@
 <!DOCTYPE html>
 {% extends 'main.html' %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body >
     {% load static %}
     {% block content %}
     {% load crispy_forms_tags %}
-    <div>
-        <form method="post" action="">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <input type="submit" value="Submit">
-        </form>
+<body>
+    <div class="container col-12">
+        <div class="container-fluid p-3 border shadow-sm bg-white bg-opacity-50 rounded">
+            <div class="text-center">
+                <form method="post" action="">
+                    {% csrf_token %}
+                    {{ form | crispy }}
+                    <input class="btn btn-success m-2" type="submit" value="Submit">
+                </form>
+            </div>
+
+        </div>
     </div>
-    <script type="text/javascript">
-        window.addEventListener("map:init", function (e){
+        <script type="text/javascript">
+                window.addEventListener("map:init", function (e){
 
-            var detail = e.detail;
+                    var detail = e.detail;
 
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition( function (position){
-                    detail.map.setView([position.coords.latitude,position.coords.longitude], 15);
-                    detail.map.removeControl(detail.map.attributionControl);
-                });
-            }
-        },  false);
+                    if (navigator.geolocation) {
+                        navigator.geolocation.getCurrentPosition( function (position){
+                            detail.map.setView([position.coords.latitude,position.coords.longitude], 15);
+                            detail.map.removeControl(detail.map.attributionControl);
+                        });
+                    }
+                },  false);
 
-    </script>
+            </script>
 
-    {%  endblock content %}
+            {%  endblock content %}
+
 
 </body>
 </html>

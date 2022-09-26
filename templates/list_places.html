@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-    {% extends 'main.html' %}
+{% extends 'main.html' %}
 
 <html lang="en">
 
@@ -8,14 +8,17 @@
     {% block content %}
         <div class="container-fluid">
             <div class="row">
-                <div class="col-2 sid">
-                    {% include 'sidebar_component.html' %}
+                <div class="card col-2 border rounded shadow-sm bg-white bg-opacity-50">
+                    <div>
+                         {% include 'sidebar_component.html' %}
+                    </div>
+
                 </div>
 
                 <div class="col-9 container-fluid">
                     <div>
                         <div class="container-fluid">
-                            <div class="card border my-2 shadow-sm bg-white bg-opacity-25 rounded">
+                            <div class="card border my-2 shadow-sm bg-white bg-opacity-50 rounded">
                                 <div class="card-body">
                                     <p class="card-text">There are {{ count_places }} places on the list, I would love you to add <a href="{% url 'create_place' %}">one more</a></p>
                                 </div>

@@ -3,15 +3,17 @@
 
 <body>
 
-    <div class="text-center">
-        <h4 class="border-bottom mb-3">Categories</h4>
-        <a href="{% url 'list_places' %}">ALL</a>
+    <div class="container m-2 p-2">
+        <div class="text-center">
+            <h4 class="card-title mb-3">Categories</h4>
+            <ul class="list-group">
+                <a class="list-group-item list-group-item-action " href="{% url 'list_places' %}">ALL</a>
+            {% for category in categories %}
+                <a class="list-group-item list-group-item-action" href="{% url 'list_places' %}?q={{ category.name }}">{{ category }}</a>
+            {% endfor %}
+            </ul>
+        </div>
 
-        {% for category in categories %}
-            <div>
-                <a href="{% url 'list_places' %}?q={{ category.name }}">{{ category }}</a>
-            </div>
-        {% endfor %}
     </div>
 
 
