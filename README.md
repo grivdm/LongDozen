@@ -8,6 +8,8 @@ The idea is simple - this site shows you the nearest place you could visit whate
 
 This is my pet-project and main purpuse was to put into practice the knowledges of the topics I have learned. 
 I have used Django, PostgreSQL with PostGIS extender and some decoration libraries such as Bootstrap, django-leaflet and crispy-django.
+##
+I was trying using different approaches and tools to development. For instance, views are implemented both as Functio-based and Class-based Views. Finding a user location is implemented by HTML Geolocation API. 
 
 
 <table width="100%"> 
