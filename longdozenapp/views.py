@@ -165,7 +165,7 @@ class ListPlacesView(generic.ListView):
     def get_context_data(self, **kwargs):
         context = super(ListPlacesView, self).get_context_data(**kwargs)
         context['categories'] = Category.objects.all()
-        context['count_places'] = Place.objects.all().count()
+        context['count_places'] = Place.objects.count()
         return context
 
 
