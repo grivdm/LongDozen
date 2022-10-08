@@ -42,7 +42,9 @@ INSTALLED_APPS = [
     'django.contrib.gis',
     'longdozenapp',
     'crispy_forms',
-    'leaflet'
+    'leaflet',
+    'rest_framework',
+    'django_filters',
 ]
 
 
