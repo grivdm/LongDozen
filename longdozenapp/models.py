@@ -42,6 +42,9 @@ class Place(models.Model):
     class Meta:
         ordering = ['-name']
 
+    def __str__(self):
+        return self.name
+
 
 class Favorite(models.Model):
     place = models.ForeignKey(Place, on_delete=models.CASCADE)
