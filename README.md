@@ -12,21 +12,5 @@ I have used Django, PostgreSQL with PostGIS extender and some decoration librari
 I was trying using different approaches and tools to development. For instance, views are implemented both as Functio-based and Class-based Views. Finding a user location is implemented by HTML Geolocation API. 
 
 
-<table width="100%"> 
-<tr>
-<td width="50%">      
-&nbsp; 
-<br>
-<p align="center">
-  List places page
-</p>
-<img src="https://github.com/grivdm/LongDozen/blob/master/Screenshots/list_places.jpg">
-</td> 
-<td width="50%">
-<br>
-<p align="center">
-  Place page
-</p>
-<img src="https://github.com/grivdm/LongDozen/blob/master/Screenshots/place_page.jpg">  
-</td>
-</table>
+![list_places](https://user-images.githubusercontent.com/81012708/215536058-793d614d-08d4-441c-a1ad-f20dcd0b5782.jpg)
+![place_page](https://user-images.githubusercontent.com/81012708/215536081-9fcb4526-7fa8-413b-ab5d-f3f607f4387d.jpg)
