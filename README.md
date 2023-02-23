@@ -1,15 +1,31 @@
 # LongDozen
 
-_Let users find the nearest place and rate it!_
+LongDozen is a web application that allows users to find the nearest place they can visit, such as bars, cafes or restaurants.  
+It also provides users with the ability to create, update, rate, and add places to their favorites. Users can also register and upgrade their user page. This project is developed using Django, PostgreSQL with PostGIS extender, and some decoration libraries such as Bootstrap, django-leaflet, and crispy-django.
 
 
-##
-The idea is simple - this site shows the nearest place you could visit whatever it is (bar, cafe, restaurant), providing the ability to create, update, rate and add to favorites places, register and upgrade user page as well.
+## Features
++ Find the nearest place you can visit based on your current location.
++ Create, update, rate, and add places to favorites.
++ Register and upgrade user pages.
++ Functionality to search for specific types of places.
++ Views are implemented both as Function-based Views (FBV) and Class-based Views (CBV).
++ Finding a user location is implemented using HTML Geolocation API.
 
-This is my pet-project and main purpuse was to put into practice the knowledge of the topics I've learned. 
-I have used Django, PostgreSQL with PostGIS extender and some decoration libraries such as Bootstrap, django-leaflet and crispy-django.
-##
-I was trying using different approaches and tools to development. For instance, views are implemented both as Functio-based and Class-based Views. Finding a user location is implemented by HTML Geolocation API. 
+## Technologies Used
++ Python 3.9
++ Django 3.2
++ PostgreSQL with PostGIS extender
++ HTML Geolocation API
++ Bootstrap 5
++ Django-leaflet
++ Crispy-django
++ AJAX
+
+
+## Contributing
+If you find any issues with the app or have ideas for new features, please feel free to create a pull request or open an issue in this repository. I welcome any and all contributions.
+
 
 
 ![list_places](https://user-images.githubusercontent.com/81012708/215536058-793d614d-08d4-441c-a1ad-f20dcd0b5782.jpg)
