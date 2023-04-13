@@ -1,6 +1,6 @@
 # LongDozen
 
- that offers users a convenient way to discover nearby places such as bars, cafes, and restaurants. The application empowers users with an array of functionalities such as the ability to create, modify, rate, and bookmark places of interest. Additionally, users can register and personalize their user page. 
+ that offers users a convenient way to discover nearby places such as bars, cafes, and restaurants. The application empowers users with an array of functionalities such as the ability to create, modify, rate, and bookmark places of interest. Additionally, users can register and personalize their user page.   
 This project is developed using Django, PostgreSQL with PostGIS extender, and some decoration libraries such as Bootstrap, django-leaflet, and crispy-django.
 
 
