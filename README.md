@@ -1,7 +1,7 @@
 # LongDozen
 
-LongDozen is a web application that allows users to find the nearest place they can visit, such as bars, cafes or restaurants.  
-It also provides users with the ability to create, update, rate, and add places to their favorites. Users can also register and upgrade their user page. This project is developed using Django, PostgreSQL with PostGIS extender, and some decoration libraries such as Bootstrap, django-leaflet, and crispy-django.
+ that offers users a convenient way to discover nearby places such as bars, cafes, and restaurants. The application empowers users with an array of functionalities such as the ability to create, modify, rate, and bookmark places of interest. Additionally, users can register and personalize their user page. 
+This project is developed using Django, PostgreSQL with PostGIS extender, and some decoration libraries such as Bootstrap, django-leaflet, and crispy-django.
 
 
 ## Features
